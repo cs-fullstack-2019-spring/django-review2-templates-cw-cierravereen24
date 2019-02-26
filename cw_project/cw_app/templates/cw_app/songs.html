@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Songs</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<body>
+<!--bootstrap table that is fancy like yancy-->
+<div class="jumbotron">
+    My Most Excellent Tuneage
+</div>
+{% block content %}
+<table class="table">
+    <tr>
+        <th>Band</th>
+        <th>Song</th>
+    </tr>
+    <!--Creates a for loop to iterate through the song names-->
+    {% for song in song_list %}
+    <tr>
+        <td>{{ song.song_band }}</td>
+        <td>
+            <!--a link to the song id -->
+            <a href="{% url 'details_songs' song.song_id %}">{{ song.song_title}}</a>
+        </td>
+    </tr>
+    {% endfor %}
+
+</table>
+
+
+{% endblock content %}
+
+</body>
+</html>
