@@ -1,4 +1,4 @@
-from django.shortcuts import render
+1from django.shortcuts import render
 
 # from django.http import HttpResponse
 
